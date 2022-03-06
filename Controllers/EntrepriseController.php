@@ -2,26 +2,31 @@
 
     class EntrepriseController
     {
-        public function index()
+        // Afficher une vieuw 
+        public function viewManager()
         {
-            $view = isset($_GET['Views']) ? $_GET['Views'] : NULL;
+            $view = isset($_GET['view']) ? $_GET['view'] : NULL;
             switch ($view) {
-                case 'ajout':
-                    $this->includeViews($view);
+                case 'ajoutEntreprise':
+                    $this->includeFormAjout();
                     break;
-                
+                case 'modification':
+                    $this->includeFormAjout();
                 default:
-                    $this->includeViews();
+                $this->liste();
                     break;
             }
-            
         }
        
-        public function includeViews($page = 'liste')
+        public function liste()
         {
-            include('Views/Entreprises/' .$page. '.php');
+            include 'Views/Entreprises/listeEnrteprise.php';
+        }
+
+        // La fonction permet d'afficher ajout.php  
+        public function includeFormAjout()
+        {
+            include 'Views/Entreprises/ajoutEntreprise.php';
         }
     }
-
-
 ?>

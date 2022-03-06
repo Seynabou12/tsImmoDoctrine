@@ -4,8 +4,8 @@
 require_once 'Controllers/EntrepriseController.php';
 include_once '../NousLesFemmes/Views/headerFooter/header.php';
 
-$entrepriseC= new EntrepriseController();
-$entrepriseC->index();
+$entreprise= new EntrepriseController();
+$entreprise->viewManager();
 
 include_once '../NousLesFemmes/Views/headerFooter/footer.php';
 

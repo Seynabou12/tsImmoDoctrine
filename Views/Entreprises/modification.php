@@ -10,18 +10,17 @@
 
 </head>
 <body>
-<div class="container">
 <div class="row">
-    <div class="card">
+    <div class="card-col-10 offset-1">
         <div class="card-header">
-            <span class="h2">Nouvelle Entreprise</span>
+            <span class="h2">Modification Entreprise</span>
             <span class="offset-5">
                 <a href="/NousLesFemmes/" class="btn btn-success">Listes des Entreprises</a>
             </span>
         </div>
         <div class="card-body">
             <form action="" method="post">
-               
+                <input type="text" name="id">
                 <div class="form-group">
                     <label for="">Nom Entreprise</label>
                     <input type="text" name="nomEntreprise" class="form-control">
@@ -42,15 +41,14 @@
                     <label for="">Date de Creation</label>
                     <input type="date" name="datecreation" class="form-control">
                 </div>
-                <div class="mt-4">
-                   <input type="submit" value="Enregistrer" class="btn btn-primary" name="add">
+                <div class="row">
+                   <input type="submit" value="Valider" class="btn btn-primary" name="add">
                 </div>
             </form>
-        </div>
         </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 </html>
-
