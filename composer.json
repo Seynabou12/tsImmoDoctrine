@@ -1,0 +1,17 @@
+{
+    "name": "seynabou/nous-les-femmes",
+    "autoload": {
+        "psr-4": {
+            "Seynabou\\NousLesFemmes\\": "src/",
+            "Model\\": "Models/",
+            "Controllers\\": "Controllers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Seynabou12",
+            "email": "dioneseynabou0@gmail.com"
+        }
+    ],
+    "require": {}
+}
