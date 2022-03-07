@@ -4,7 +4,8 @@
         "psr-4": {
             "Seynabou\\NousLesFemmes\\": "src/",
             "Model\\": "Models/",
-            "Controllers\\": "Controllers/"
+            "Controllers\\": "Controllers/",
+            "Entities\\": "entities/"
         }
     },
     "authors": [

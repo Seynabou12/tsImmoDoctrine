@@ -1,33 +1,40 @@
 <?php
 
+namespace Models;
+
 use PDO;
 use PDOException;
-class Database
-{
 
-    private static $dbHost  = 'localhost';
-    private static $dbUser = 'root';
-    private static $dbPassword = '';
-    private static $dbName = 'ProjetPoo';
 
-    private static $connecte = null;
+    class Database
 
-    public function __construct()
     {
-        
-    }
+    
+        public $pdo;
 
-    public function Connexion()
-    {
-       if (null == self::$connecte) {
-           
-        try {
-            self:: $connecte = new PDO ( "mysql:host=" .self::$dbHost . ";dbname=" .self::$dbName, self::$dbUser, self::$dbPassword, array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION));
-        } catch (PDOException $e) {
-            die($e->getMessage());
+        protected function getConnexion()
+        {
+            if($this->pdo == null){
+                try {
+                    $host = 'mysql:host=localhost;dbname=ProjetPoo';
+                    $this->pdo = new PDO(
+                        $host,
+                        'root',
+                        '',
+                        array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION)
+                    );
+                } catch (PDOException $ex) {
+                    die("connexion impossible<br>" . $ex->getMessage());
+                }
+            }
         }
-       }
-       return self::$connecte;
+
+        protected function executeSelect($sql){
+            try {
+                $this->getConnexion();
+                return $this->pdo->query($sql);
+            } catch (\Throwable $th) {
+                die('Erreur executePrepareAdd requete');
+            }
+        }
     }
- 
-}

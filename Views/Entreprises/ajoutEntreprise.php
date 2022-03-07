@@ -20,28 +20,64 @@
             </span>
         </div>
         <div class="card-body">
-            <form action="" method="post">
+            <form action="/NousLesFemmes/Entreprise/add" class="row mt-4" method="post">
                
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label for="">Nom Entreprise</label>
                     <input type="text" name="nomEntreprise" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label for="">Nombre Employés</label>
                     <input type="number" name="nombre" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label for="">Siege Social</label>
                     <input type="text" name="siege" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="">Registre Commerce</label>
-                    <input type="number" name="registre" class="form-control">
-                </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label for="">Date de Creation</label>
                     <input type="date" name="datecreation" class="form-control">
                 </div>
+                
+                <div class="form-group col-md-6" id="idDomaine">
+                        <label for="idClient" class="control-label">Domaine</label>
+                        <select name="idDomaine" id="idDomaine" class="form-control">
+                            <option value="0">--domaine--</option>
+                            <?php
+                            foreach ($domaine as $domaine) {
+                            ?>
+                                <option value="<?php echo $domaine['idDomaine']; ?>"><?php echo $domaine['libelle']; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                <div class="form-group col-md-6" id="idStatut">
+                        <label for="idStatut" class="control-label">Statut Juridique</label>
+                        <select name="idStatut" id="idStatut" class="form-control">
+                            <option value="0">--satatut juridiques--</option>
+                            <?php
+                            foreach ($statut as $statut) {
+                            ?>
+                                <option value="<?php echo $statut['idStatut']; ?>"><?php echo $statut['libelle']; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                <div class="form-group col-md-6" id="idCommune">
+                        <label for="idCommune" class="control-label">Commune</label>
+                        <select name="idCommune" id="idCommune" class="form-control">
+                            <option value="0">--commune--</option>
+                            <?php
+                            foreach ($region as $region) {
+                            ?>
+                                <option value="<?php echo $region['idCommune']; ?>"><?php echo $region['libelle']; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
                 <div class="mt-4">
                    <input type="submit" value="Enregistrer" class="btn btn-primary" name="add">
                 </div>
