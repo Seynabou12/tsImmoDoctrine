@@ -52,12 +52,10 @@ require 'Models/Commune.php';
         public function liste()
         {
             $db = new EntrepriseModel;
-           
             $entreprises = $db->list();
             require_once('Views/Entreprises/listeEnrteprise.php');
         }
 
-        // La fonction permet d'afficher ajout.php  
         public function add()
         {
             if(isset($_POST['add'])){
@@ -65,7 +63,7 @@ require 'Models/Commune.php';
                 extract($_POST);
                 $db = new EntrepriseModel();
             
-                $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page);
+                $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre);
                 $this->liste();
 
             } else {
@@ -91,7 +89,7 @@ require 'Models/Commune.php';
                 }
                 include 'Views/Entreprises/ajoutEntreprise.php';
             }
-            
         }
+       
     }
 ?>

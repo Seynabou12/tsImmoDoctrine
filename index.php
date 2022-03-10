@@ -1,5 +1,6 @@
 <?php
 
+
 require_once('vendor/autoload.php');
 
 $url = $_SERVER['REQUEST_URI'];
@@ -43,7 +44,7 @@ if (file_exists('Controllers/' . $url[2] . 'Controller.php')) {
         die($error);
     }
 } else {
-    die("hello world");
+    require('./Views/headerFooter/header.php');
 }
 
 ?>

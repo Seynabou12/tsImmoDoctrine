@@ -16,23 +16,23 @@ class EntrepriseModel extends Database
         // Instenciation de la classe Database
         $this->db = new Database();
     }
-    public function insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page)
+    public function insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre)
     {
 
         $this->getConnexion();
         // Preparation de la requete
-        $queryPrepare = $this->pdo->prepare("INSERT INTO Entreprise(nomentreprise,nombreEmploye,siegeSocial,dateCreation,id_commune,idStatut,id_domaine, page_web) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
+        $queryPrepare = $this->pdo->prepare("INSERT INTO Entreprise(nomentreprise,nombreEmploye,siegeSocial,dateCreation,id_commune,idStatut,id_domaine, page_web, registreCommercial) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 
         // Excécution de la requete
-        return $queryPrepare->execute(array($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page));
+        return $queryPrepare->execute(array($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre));
     }
-    public function edit($nomEntreprise,$nombre,$siege,$datecreation,$id_commune,$idStatut,$id_domaine)
+
+    public function edit($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre)
     {
 
     }
-    public function delete($id)
-    {
-    }
+
+    
 
     // Lister les entreprises
     public function list()
@@ -41,7 +41,8 @@ class EntrepriseModel extends Database
 
         $t = $this->executeSelect('Select * from Entreprise')->fetchAll();
 
-        foreach ($t as $key) {
+        foreach ($t as $key) 
+        {
 
             $entreprise = new EntitiesEntreprise();
 
@@ -62,6 +63,8 @@ class EntrepriseModel extends Database
             $entreprise->setId_commune($key['id_commune']);
 
             $entreprise->setPage($key['page_web']);
+
+            $entreprise->setRegistre($key['registreCommercial']);
 
             $entreprises[] = $entreprise;
         }

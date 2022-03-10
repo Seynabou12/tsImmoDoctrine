@@ -13,6 +13,7 @@ class Entreprise
     private $idStatut;
     private $id_domaine;
     private $page;
+    private $registre;
 
     /**
      * Get the value of idEntreprise
@@ -190,6 +191,26 @@ class Entreprise
     public function setPage($page)
     {
         $this->page = $page;
+
+        return $this;
+    }
+
+     /**
+     * Get the value of registre commercial
+     */ 
+    public function getRegistre()
+    {
+        return $this->registre;
+    }
+
+    /**
+     * Set the value of registre commercial
+     *
+     * @return  self
+     */ 
+    public function setRegistre($registre)
+    {
+        $this->registre = $registre;
 
         return $this;
     }

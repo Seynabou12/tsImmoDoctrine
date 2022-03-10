@@ -28,14 +28,14 @@
                             <th>Nombre Employés</th>
                             <th>Date de Création</th>
                             <th>Page Web</th>
-                            <!-- <th>Registre De Commerce</th> -->
+                            <th>Registre De Commerce</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <?php
-                        foreach ($entreprises as $e) {
+                            foreach ($entreprises as $e) {
                         ?>
                             <tr>
                                 <td><?= $e->getIdEntreprise() ?></td>
@@ -44,10 +44,10 @@
                                 <td><?= $e->getNombreEmployes(); ?></td>
                                 <td><?= $e->getDateCreation(); ?></td>
                                 <td><?= $e->getPage(); ?></td>
+                                <td><?= $e->getRegistre(); ?></td>
                                 <td>
-                                    <a href="/NousLesFemmes/index.php?view=modification&id=1" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
+                                    <a href="" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
                                     <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                    <a href="" class="">
                                 </td>
                             </tr>
                         <?php

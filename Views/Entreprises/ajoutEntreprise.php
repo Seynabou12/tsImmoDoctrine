@@ -12,11 +12,11 @@
 <body>
 <div class="container">
 <div class="row">
-    <div class="card">
+    <div class="card mt-4">
         <div class="card-header">
             <span class="h2">Nouvelle Entreprise</span>
             <span class="offset-5">
-                <a href="/NousLesFemmes/" class="btn btn-success">Listes des Entreprises</a>
+                <a href="" class="btn btn-success" name="add">Listes des Entreprises</a>
             </span>
         </div>
         <div class="card-body">
@@ -24,24 +24,29 @@
                
                 <div class="form-group col-md-6">
                     <label for="">Nom Entreprise</label>
-                    <input type="text" name="nomEntreprise" class="form-control">
+                    <input type="text" name="nomEntreprise" class="form-control" required> 
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">Nombre Employés</label>
-                    <input type="number" name="nombre" class="form-control">
+                    <input type="number" name="nombre" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">Siege Social</label>
-                    <input type="text" name="siege" class="form-control">
+                    <input type="text" name="siege" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="">Date de Creation</label>
-                    <input type="date" name="datecreation" class="form-control">
+                    <input type="date" name="datecreation" class="form-control" required>
                 </div>
                 
                 <div class="form-group col-md-6">
                     <label for="">Page Web</label>
                     <input type="text" name="page" class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="">Registre Commercial</label>
+                    <input type="number" name="registre" class="form-control">
                 </div>
 
                 <div class="form-group col-md-6" id="idDomaine">
@@ -58,7 +63,7 @@
                         </select>
                     </div>
                 <div class="form-group col-md-6" id="idStatut">
-                        <label for="idStatut" class="control-label">Statut Juridique</label>
+                        <label for="idStatut" class="control-label">Statut Juridiques</label>
                         <select name="idStatut" id="idStatut" class="form-control">
                             <option value="0">--statut juridiques--</option>
                             <?php
@@ -72,7 +77,7 @@
                     </div>
                 <div class="form-group col-md-6" id="idCommune">
                         <label for="idCommune" class="control-label">Commune</label>
-                        <select name="idCommune" id="idCommune" class="form-control">
+                        <select name="idCommune" id="idCommune" class="form-control" >
                             <option value="0">--commune--</option>
                             <?php
                             foreach ($communes as $commune) {
