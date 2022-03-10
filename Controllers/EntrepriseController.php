@@ -2,9 +2,14 @@
 
 namespace Controllers;
 
+
+use Models\DomaineDb;
 use Models\EntrepriseModel;
+use Models\StatutJuridique;
 
 require 'Models/EntrepriseModel.php';
+require 'Models/DomaineDb.php';
+require 'Models/StatutJuridique.php';
 
     class EntrepriseController
     {
@@ -17,9 +22,7 @@ require 'Models/EntrepriseModel.php';
         public function viewManager()
         {
 
-
             $db = new EntrepriseModel;
-
 
             $view = isset($_GET['view']) ? $_GET['view'] : NULL;
             switch ($view) 
@@ -46,14 +49,11 @@ require 'Models/EntrepriseModel.php';
        
         public function liste()
         {
-
             $db = new EntrepriseModel;
+           
             $entreprises = $db->list();
-
             require_once('Views/Entreprises/listeEnrteprise.php');
         }
-
-
 
         // La fonction permet d'afficher ajout.php  
         public function add()
@@ -62,14 +62,26 @@ require 'Models/EntrepriseModel.php';
 
                 extract($_POST);
                 $db = new EntrepriseModel();
-
-
-                $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation,  null,  null,  null);
+                //var_dump($idDomaine);
+                $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation, null, $idStatut, $idDomaine);
                 $this->liste();
 
             } else {
+                try {
+                    $statut = new StatutJuridique();
+                    $statuts = $statut->listeStatut();  
+                } catch (\Throwable $th) {
+                    die($th->getMessage());
+                }
+                try {
+                    $domaine = new DomaineDb();
+                    $domaines = $domaine->listeDomaine();  
+                } catch (\Throwable $th) {
+                    die($th->getMessage());
+                }
                 include 'Views/Entreprises/ajoutEntreprise.php';
             }
+            
         }
     }
 ?>

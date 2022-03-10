@@ -44,7 +44,7 @@
                         <select name="idDomaine" id="idDomaine" class="form-control">
                             <option value="0">--domaine--</option>
                             <?php
-                            foreach ($domaine as $domaine) {
+                            foreach ($domaines as $domaine) {
                             ?>
                                 <option value="<?php echo $domaine['idDomaine']; ?>"><?php echo $domaine['libelle']; ?></option>
                             <?php
@@ -57,9 +57,9 @@
                         <select name="idStatut" id="idStatut" class="form-control">
                             <option value="0">--satatut juridiques--</option>
                             <?php
-                            foreach ($statut as $statut) {
+                            foreach ($statuts as $statut) {
                             ?>
-                                <option value="<?php echo $statut['idStatut']; ?>"><?php echo $statut['libelle']; ?></option>
+                                <option value="<?php echo $statut['idStatutJuridique']; ?>"><?php echo $statut['libelle']; ?></option>
                             <?php
                             }
                             ?>

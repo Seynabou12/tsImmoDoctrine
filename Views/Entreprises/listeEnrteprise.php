@@ -45,25 +45,13 @@
                                 <td>
                                     <a href="/NousLesFemmes/index.php?view=modification&id=1" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
                                     <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                    <a href="" class="">
                                 </td>
                             </tr>
                         <?php
                         }
 
                         ?>
-
-                        <!-- <tr>
-                            <td>1</td>
-                            <td>ONG</td>
-                            <td>Colobane</td>
-                            <td>50</td>
-                            <td>10-05-2021</td>
-                            <td>435772</td>
-                            <td>
-                                <a href="/NousLesFemmes/index.php?view=modification&id=1" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
-                            </td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>

@@ -2,9 +2,9 @@
 
 require_once('vendor/autoload.php');
 
-
 $url = $_SERVER['REQUEST_URI'];
 
+// Explode permet de donner un url 
 $url = explode('/', $url);
 
 if (file_exists('Controllers/' . $url[2] . 'Controller.php')) {
@@ -43,10 +43,7 @@ if (file_exists('Controllers/' . $url[2] . 'Controller.php')) {
         die($error);
     }
 } else {
-    die("error");;
+    die("hello world");
 }
-
-
-
 
 ?>

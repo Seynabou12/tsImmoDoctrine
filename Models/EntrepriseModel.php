@@ -16,7 +16,7 @@ class EntrepriseModel extends Database
         // Instenciation de la classe Database
         $this->db = new Database();
     }
-    public function insert($nomEntreprise, $nombre, $siege, $datecreation, $id_commune, $idStatut, $id_domaine)
+    public function insert($nomEntreprise, $nombre, $siege, $datecreation, $id_commune, $idStatut, $idDomaine)
     {
 
         $this->getConnexion();
@@ -24,19 +24,20 @@ class EntrepriseModel extends Database
         $queryPrepare = $this->pdo->prepare("INSERT INTO Entreprise(nomentreprise,nombreEmploye,siegeSocial,dateCreation,id_commune,idStatut,id_domaine) VALUES (?, ?, ?, ?, ?, ?, ?) ");
 
         // Excécution de la requete
-        return $queryPrepare->execute(array($nomEntreprise, $nombre, $siege, $datecreation, $id_commune, $idStatut, $id_domaine));
+        return $queryPrepare->execute(array($nomEntreprise, $nombre, $siege, $datecreation, $id_commune, $idStatut, $idDomaine));
     }
-    public function edit($nomEntreprise, $siege, $nombre, $datecreation, $registre, $id)
+    public function edit($nomEntreprise,$nombre,$siege,$datecreation,$id_commune,$idStatut,$id_domaine)
     {
+
     }
     public function delete($id)
     {
     }
+
+    // Lister les entreprises
     public function list()
     {
         $entreprises = [];
-
-        // $t = $this->executeSelect('Select * from Entreprise, Commune where Entreprise.id_commune = Commune.idCommune')->fetchAll();
 
         $t = $this->executeSelect('Select * from Entreprise')->fetchAll();
 
@@ -53,9 +54,10 @@ class EntrepriseModel extends Database
             $entreprise->setSiegeSocial($key['siegeSocial']);
 
             $entreprise->setDateCreation($key['dateCreation']);
+            
+            $entreprise->setId_domaine($key['id_domaine']);
 
-
-            // $entreprise->setId_commune($key['id_commune']);
+            $entreprise->setIdStatut($key['idStatut']);
 
             $entreprises[] = $entreprise;
         }
