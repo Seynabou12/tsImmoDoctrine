@@ -6,10 +6,12 @@ namespace Controllers;
 use Models\DomaineDb;
 use Models\EntrepriseModel;
 use Models\StatutJuridique;
+use Models\Commune;
 
 require 'Models/EntrepriseModel.php';
 require 'Models/DomaineDb.php';
 require 'Models/StatutJuridique.php';
+require 'Models/Commune.php';
 
     class EntrepriseController
     {
@@ -62,11 +64,19 @@ require 'Models/StatutJuridique.php';
 
                 extract($_POST);
                 $db = new EntrepriseModel();
-                //var_dump($idDomaine);
-                $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation, null, $idStatut, $idDomaine);
+            
+                $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page);
                 $this->liste();
 
             } else {
+
+                try {
+                    $commune = new Commune();
+                    $communes = $commune->listeCommune();  
+                } catch (\Throwable $th) {
+                    die($th->getMessage());
+                }
+               
                 try {
                     $statut = new StatutJuridique();
                     $statuts = $statut->listeStatut();  

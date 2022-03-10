@@ -12,6 +12,7 @@ class Entreprise
     private $id_commune;
     private $idStatut;
     private $id_domaine;
+    private $page;
 
     /**
      * Get the value of idEntreprise
@@ -169,6 +170,26 @@ class Entreprise
     public function setId_domaine($id_domaine)
     {
         $this->id_domaine = $id_domaine;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nombreEmployes
+     */ 
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * Set the value of nombreEmployes
+     *
+     * @return  self
+     */ 
+    public function setPage($page)
+    {
+        $this->page = $page;
 
         return $this;
     }

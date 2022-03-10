@@ -16,15 +16,15 @@ class EntrepriseModel extends Database
         // Instenciation de la classe Database
         $this->db = new Database();
     }
-    public function insert($nomEntreprise, $nombre, $siege, $datecreation, $id_commune, $idStatut, $idDomaine)
+    public function insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page)
     {
 
         $this->getConnexion();
         // Preparation de la requete
-        $queryPrepare = $this->pdo->prepare("INSERT INTO Entreprise(nomentreprise,nombreEmploye,siegeSocial,dateCreation,id_commune,idStatut,id_domaine) VALUES (?, ?, ?, ?, ?, ?, ?) ");
+        $queryPrepare = $this->pdo->prepare("INSERT INTO Entreprise(nomentreprise,nombreEmploye,siegeSocial,dateCreation,id_commune,idStatut,id_domaine, page_web) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
 
         // Excécution de la requete
-        return $queryPrepare->execute(array($nomEntreprise, $nombre, $siege, $datecreation, $id_commune, $idStatut, $idDomaine));
+        return $queryPrepare->execute(array($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page));
     }
     public function edit($nomEntreprise,$nombre,$siege,$datecreation,$id_commune,$idStatut,$id_domaine)
     {
@@ -58,6 +58,10 @@ class EntrepriseModel extends Database
             $entreprise->setId_domaine($key['id_domaine']);
 
             $entreprise->setIdStatut($key['idStatut']);
+
+            $entreprise->setId_commune($key['id_commune']);
+
+            $entreprise->setPage($key['page_web']);
 
             $entreprises[] = $entreprise;
         }

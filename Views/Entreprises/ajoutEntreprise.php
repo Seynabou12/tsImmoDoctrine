@@ -39,6 +39,11 @@
                     <input type="date" name="datecreation" class="form-control">
                 </div>
                 
+                <div class="form-group col-md-6">
+                    <label for="">Page Web</label>
+                    <input type="text" name="page" class="form-control">
+                </div>
+
                 <div class="form-group col-md-6" id="idDomaine">
                         <label for="idClient" class="control-label">Domaine</label>
                         <select name="idDomaine" id="idDomaine" class="form-control">
@@ -55,7 +60,7 @@
                 <div class="form-group col-md-6" id="idStatut">
                         <label for="idStatut" class="control-label">Statut Juridique</label>
                         <select name="idStatut" id="idStatut" class="form-control">
-                            <option value="0">--satatut juridiques--</option>
+                            <option value="0">--statut juridiques--</option>
                             <?php
                             foreach ($statuts as $statut) {
                             ?>
@@ -70,9 +75,9 @@
                         <select name="idCommune" id="idCommune" class="form-control">
                             <option value="0">--commune--</option>
                             <?php
-                            foreach ($region as $region) {
+                            foreach ($communes as $commune) {
                             ?>
-                                <option value="<?php echo $region['idCommune']; ?>"><?php echo $region['libelle']; ?></option>
+                                <option value="<?php echo $commune['idCommune']; ?>"><?php echo $commune['libelle']; ?></option>
                             <?php
                             }
                             ?>
