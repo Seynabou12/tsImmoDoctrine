@@ -14,7 +14,7 @@
 <div class="row">
     <div class="card mt-4">
         <div class="card-header">
-            <span class="h2">Nouvelle Entreprise</span>
+            <span class="h2">Les Informations de l'Entreprise</span>
             <span class="offset-5">
                 <a href="/NousLesFemmes/Entreprise/liste" class="btn btn-success">Listes des Entreprises</a>
             </span>
@@ -47,6 +47,11 @@
                 <div class="form-group col-md-6">
                     <label for="">Registre Commercial</label>
                     <input type="number" name="registre" class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="">NINEA</label>
+                    <input type="text" name="ninea" class="form-control">
                 </div>
 
                 <div class="form-group col-md-6" id="idDomaine">
@@ -82,7 +87,7 @@
                             <?php
                             foreach ($communes as $commune) {
                             ?>
-                                <option value="<?php echo $commune['idCommune']; ?>"><?php echo $commune['libelle']; ?></option>
+                                <option value="<?php echo $commune['idCommune']; ?>"><?php echo $commune['libelleCommune'] ?></option>
                             <?php
                             }
                             ?>

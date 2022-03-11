@@ -14,6 +14,7 @@ class Entreprise
     private $id_domaine;
     private $page;
     private $registre;
+    private $ninea;
 
     /**
      * Get the value of idEntreprise
@@ -211,6 +212,27 @@ class Entreprise
     public function setRegistre($registre)
     {
         $this->registre = $registre;
+
+        return $this;
+    }
+
+
+     /**
+     * Get the value of ninea
+     */ 
+    public function getNinea()
+    {
+        return $this->ninea;
+    }
+
+    /**
+     * Set the value of ninea 
+     *
+     * @return  self
+     */ 
+    public function setNinea($ninea)
+    {
+        $this->ninea = $ninea;
 
         return $this;
     }

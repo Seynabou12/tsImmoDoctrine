@@ -39,7 +39,9 @@ if (file_exists('Controllers/' . $url[2] . 'Controller.php')) {
                 die($error);
             }
         }
-    } else {
+    } 
+    else 
+    {
         $error = "La Class " . $url[2] . " n'existe pas";
         die($error);
     }

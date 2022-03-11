@@ -63,7 +63,7 @@ require 'Models/Commune.php';
                 extract($_POST);
                 $db = new EntrepriseModel();
             
-                $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre);
+                $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre, $ninea);
                 $this->liste();
 
             } else {

@@ -29,6 +29,7 @@
                             <th>Date de Création</th>
                             <th>Page Web</th>
                             <th>Registre De Commerce</th>
+                            <th>NINEA</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -45,14 +46,16 @@
                                 <td><?= $e->getDateCreation(); ?></td>
                                 <td><?= $e->getPage(); ?></td>
                                 <td><?= $e->getRegistre(); ?></td>
+                                <td><?= $e->getNinea(); ?></td>
                                 <td>
                                     <a href="" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
+                                    <a href="#" class="btn btn-success"><i class="bi bi-plus"></i></a>
                                     <a href="/NousLesFemmes/Entreprise/delete/<?=$e->getIdEntreprise()?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                    
                                 </td>
                             </tr>
                         <?php
                         }
-
                         ?>
                     </tbody>
                 </table>
