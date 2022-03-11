@@ -47,7 +47,7 @@
                                 <td><?= $e->getRegistre(); ?></td>
                                 <td>
                                     <a href="" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                    <a href="/NousLesFemmes/Entreprise/delete/<?=$e->getIdEntreprise()?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         <?php

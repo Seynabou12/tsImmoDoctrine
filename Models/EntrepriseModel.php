@@ -32,7 +32,12 @@ class EntrepriseModel extends Database
 
     }
 
-    
+    public function delete($idEntreprise)
+    {
+        $this->getConnexion();
+        $queryPrepare = $this->pdo->prepare("DELETE FROM Entreprise WHERE idEntreprise=?");
+        return $queryPrepare->execute(array($idEntreprise));
+    }
 
     // Lister les entreprises
     public function list()

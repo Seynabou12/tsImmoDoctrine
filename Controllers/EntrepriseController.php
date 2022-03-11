@@ -90,6 +90,13 @@ require 'Models/Commune.php';
                 include 'Views/Entreprises/ajoutEntreprise.php';
             }
         }
+        
+        public function delete($idEntreprise)
+        {
+            $db = new EntrepriseModel;
+            $entreprises = $db->delete($idEntreprise);
+            $this->liste();
+        }
        
     }
 ?>

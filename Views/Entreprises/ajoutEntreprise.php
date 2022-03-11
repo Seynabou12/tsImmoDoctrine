@@ -16,7 +16,7 @@
         <div class="card-header">
             <span class="h2">Nouvelle Entreprise</span>
             <span class="offset-5">
-                <a href="" class="btn btn-success" name="add">Listes des Entreprises</a>
+                <a href="/NousLesFemmes/Entreprise/liste" class="btn btn-success">Listes des Entreprises</a>
             </span>
         </div>
         <div class="card-body">
