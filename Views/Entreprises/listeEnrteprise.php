@@ -48,7 +48,7 @@
                                 <td><?= $e->getRegistre(); ?></td>
                                 <td><?= $e->getNinea(); ?></td>
                                 <td>
-                                    <a href="" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
+                                    <a href="/NousLesFemmes/Entreprise/edit/<?=$e->getIdEntreprise()?>" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" class="btn btn-success"><i class="bi bi-plus"></i></a>
                                     <a href="/NousLesFemmes/Entreprise/delete/<?=$e->getIdEntreprise()?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                     

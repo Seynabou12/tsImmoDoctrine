@@ -27,9 +27,19 @@ class EntrepriseModel extends Database
         return $queryPrepare->execute(array($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre, $ninea));
     }
 
-    public function edit($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre)
+    public function update($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre, $ninea, $idEntreprise)
     {
 
+        try {
+            $this->getConnexion();
+            // Preparation de la requete
+            $queryPrepare = $this->pdo->prepare("UPDATE Entreprise set nomentreprise = ?, nombreEmploye = ?, siegeSocial = ?, dateCreation = ?, id_commune = ?, idStatut = ?,id_domaine = ?,  page_web = ?,  registreCommercial = ?,  ninea  = ? where idEntreprise = ?");
+            
+            // Excécution de la requete
+            return $queryPrepare->execute(array($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre, $ninea, $idEntreprise));
+        } catch (\Throwable $th) {
+            die($th->getMessage());
+        }
     }
 
     public function delete($idEntreprise)
@@ -46,8 +56,7 @@ class EntrepriseModel extends Database
 
         $t = $this->executeSelect('Select * from Entreprise')->fetchAll();
 
-        foreach ($t as $key) 
-        {
+        foreach ($t as $key) {
 
             $entreprise = new EntitiesEntreprise();
 
@@ -60,7 +69,7 @@ class EntrepriseModel extends Database
             $entreprise->setSiegeSocial($key['siegeSocial']);
 
             $entreprise->setDateCreation($key['dateCreation']);
-            
+
             $entreprise->setId_domaine($key['id_domaine']);
 
             $entreprise->setIdStatut($key['idStatut']);
@@ -77,5 +86,39 @@ class EntrepriseModel extends Database
         }
 
         return $entreprises;
+    }
+
+    // Lister les entreprises
+    public function getById($id)
+    {
+        $entreprises = [];
+
+        $key = $this->executeSelect('Select * from Entreprise where idEntreprise = ' . $id . '')->fetch();
+
+        $entreprise = new EntitiesEntreprise();
+
+        $entreprise->setIdEntreprise($key['idEntreprise']);
+
+        $entreprise->setNomentreprise($key['nomentreprise']);
+
+        $entreprise->setNombreEmployes($key['nombreEmploye']);
+
+        $entreprise->setSiegeSocial($key['siegeSocial']);
+
+        $entreprise->setDateCreation($key['dateCreation']);
+
+        $entreprise->setId_domaine($key['id_domaine']);
+
+        $entreprise->setIdStatut($key['idStatut']);
+
+        $entreprise->setId_commune($key['id_commune']);
+
+        $entreprise->setPage($key['page_web']);
+
+        $entreprise->setRegistre($key['registreCommercial']);
+
+        $entreprise->setNinea($key['ninea']);
+
+        return $entreprise;
     }
 }

@@ -20,12 +20,12 @@ require 'Models/Commune.php';
         {
             $this->entrepriseModel = new EntrepriseModel();
         }
+
         // Afficher une vieuw 
         public function viewManager()
         {
 
             $db = new EntrepriseModel;
-
             $view = isset($_GET['view']) ? $_GET['view'] : NULL;
             switch ($view) 
             {
@@ -37,7 +37,7 @@ require 'Models/Commune.php';
                 default:
                 $entreprise = $this->entrepriseModel->list();
                 $this->liste();
-                    break;
+                break;
             }
             
             $action = isset($_GET['action']) ? $_GET['action'] : NULL;
@@ -90,6 +90,50 @@ require 'Models/Commune.php';
                 include 'Views/Entreprises/ajoutEntreprise.php';
             }
         }
+
+        public function edit($id)
+        {
+            if(isset($_POST['modifier'])){
+
+                try {
+                    extract($_POST);
+                $db = new EntrepriseModel();
+            
+                $a = $db->update($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre, $ninea, $id);
+                $this->liste();
+                } catch (\Throwable $th) {
+                    die($th->getMessage());
+                }
+
+            } else {
+
+                try {
+                    $commune = new Commune();
+                    $communes = $commune->listeCommune();  
+                } catch (\Throwable $th) {
+                    die($th->getMessage());
+                }
+               
+                try {
+                    $statut = new StatutJuridique();
+                    $statuts = $statut->listeStatut();  
+                } catch (\Throwable $th) {
+                    die($th->getMessage());
+                }
+                try {
+                    $domaine = new DomaineDb();
+                    $domaines = $domaine->listeDomaine();  
+                } catch (\Throwable $th) {
+                    die($th->getMessage());
+                }
+
+                $entrepriseModel = new EntrepriseModel();
+
+                $entreprise = $entrepriseModel->getById($id);
+
+                include 'Views/Entreprises/modification.php';
+            }
+        }
         
         public function delete($idEntreprise)
         {
@@ -97,6 +141,8 @@ require 'Models/Commune.php';
             $entreprises = $db->delete($idEntreprise);
             $this->liste();
         }
+
+       
        
     }
 ?>
