@@ -21,12 +21,20 @@ class RepondantController
             extract($_POST);
             $db = new RepondantModel();
         
-            $a = $db->insert($nomRepondant, $prenomRepondant, $email, $telephone, $fonction);
+            $a = $db->insert($nomRepondant, $prenomRepondant, $email, $telephone);
+            $this->liste();
         } 
         else 
         {
             include 'Views/Repondant/ajoutRepondant.php';
         }
+    }
+
+    public function liste()
+    {
+        $db = new RepondantModel;
+        $repondants = $db->list();
+        require_once('Views/Repondant/listRepondant.php');
     }
 }    
 

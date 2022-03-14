@@ -49,7 +49,7 @@ class EntrepriseModel extends Database
         return $queryPrepare->execute(array($idEntreprise));
     }
 
-    // Lister les entreprises
+    
     public function list()
     {
         $entreprises = [];
@@ -88,7 +88,7 @@ class EntrepriseModel extends Database
         return $entreprises;
     }
 
-    // Lister les entreprises
+
     public function getById($id)
     {
         $entreprises = [];

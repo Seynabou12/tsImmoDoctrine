@@ -112,25 +112,7 @@ class Repondant
         return $this;
     }
 
-    /**
-     * Get the value of fonction
-     */ 
-    public function getFonction()
-    {
-        return $this->fonction;
-    }
-
-    /**
-     * Set the value of fonction
-     *
-     * @return  self
-     */ 
-    public function setFonction($fonction)
-    {
-        $this->fonction = $fonction;
-
-        return $this;
-    }
+ 
 }
 
 ?>
