@@ -60,8 +60,13 @@ class RepondantController
             include 'Views/Repondant/modificationRep.php';
         }
     }
-    
 
+    public function delete($idRepondant)
+    {
+            $db = new RepondantModel;
+            $repondants = $db->delete($idRepondant);
+            $this->liste();
+    }
     
 }    
 

@@ -93,6 +93,14 @@ class RepondantModel extends Database
 
         return $repondant;
     }
+
+
+    public function delete($idRepondant)
+    {
+        $this->getConnexion();
+        $queryPrepare = $this->pdo->prepare("DELETE FROM Repondant WHERE idRepondant=?");
+        return $queryPrepare->execute(array($idRepondant));
+    }
 }
 
 ?>

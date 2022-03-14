@@ -2,8 +2,9 @@
 
 namespace Models;
 
-use Entities\Entreprise as EntitiesEntreprise;
 use Entreprise;
+use Models\Database;
+use Entities\Entreprise as EntitiesEntreprise;
 
 require_once 'Database.php';
 
