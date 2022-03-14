@@ -141,8 +141,5 @@ require 'Models/Commune.php';
             $entreprises = $db->delete($idEntreprise);
             $this->liste();
         }
-
-       
-       
     }
 ?>

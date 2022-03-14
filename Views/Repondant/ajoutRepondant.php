@@ -20,7 +20,7 @@
             </span>
         </div>
         <div class="card-body">
-            <form action="/NousLesFemmes/Repondant/addRep" class="row mt-4" method="post">
+            <form action="/NousLesFemmes/Repondant/add" class="row mt-4" method="post">
                
                 <div class="form-group col-md-6">
                     <label for="">Nom Repondant</label>
@@ -38,14 +38,9 @@
                     <label for="">Telephone Repondant</label>
                     <input type="text" name="telephone" class="form-control" required>
                 </div>
-                
-                <div class="form-group col-md-6">
-                    <label for="">Fonction Repondant</label>
-                    <input type="text" name="fonction" class="form-control">
-                </div>
 
                 <div class="mt-4">
-                   <input type="submit" value="Enregistrer" class="btn btn-primary" name="addRep">
+                   <input type="submit" value="Enregistrer" class="btn btn-primary" name="add">
                 </div>
             </form>
         </div>

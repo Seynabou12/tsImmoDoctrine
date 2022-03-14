@@ -16,7 +16,7 @@ class RepondantController
 
     public function add()
     {
-        if(isset($_POST['addRep'])){
+        if(isset($_POST['add'])){
 
             extract($_POST);
             $db = new RepondantModel();
@@ -25,7 +25,7 @@ class RepondantController
         } 
         else 
         {
-            echo 'Hello tout le monde';
+            include 'Views/Repondant/ajoutRepondant.php';
         }
     }
 }    
