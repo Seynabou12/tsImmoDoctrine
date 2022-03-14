@@ -36,6 +36,33 @@ class RepondantController
         $repondants = $db->list();
         require_once('Views/Repondant/listRepondant.php');
     }
+
+    public function edit($id)
+    {
+        if(isset($_POST['modifier'])){
+
+            try {
+                extract($_POST);
+            $db = new RepondantModel();
+        
+            $a = $db->update($nomRepondant, $prenomRepondant, $email, $telephone, $id);
+            $this->liste();
+            } catch (\Throwable $th) {
+                die($th->getMessage());
+            }
+
+        } else {
+
+            $repondantModel = new RepondantModel();
+
+            $repondant = $repondantModel->getById($id);
+
+            include 'Views/Repondant/modificationRep.php';
+        }
+    }
+    
+
+    
 }    
 
 ?>
