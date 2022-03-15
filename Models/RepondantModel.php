@@ -17,15 +17,15 @@ class RepondantModel extends Database
         // Instenciation de la classe Database
         $this->db = new Database();
     }
-    public function insert($nomRepondant, $prenomRepondant, $email, $telephone)
+    public function insert($nomRepondant, $prenomRepondant, $email, $telephone, $idEntreprise)
     {
 
         $this->getConnexion();
         // Preparation de la requete
-        $queryPrepare = $this->pdo->prepare("INSERT INTO Repondant(nomRepondant, prenomRepondant, email, telephone) VALUES (?, ?, ?, ?)");
+        $queryPrepare = $this->pdo->prepare("INSERT INTO Repondant(nomRepondant, prenomRepondant, email, telephone, id_entrprose) VALUES (?, ?, ?, ?, ?)");
 
         // Excécution de la requete
-        return $queryPrepare->execute(array($nomRepondant, $prenomRepondant, $email, $telephone));
+        return $queryPrepare->execute(array($nomRepondant, $prenomRepondant, $email, $telephone, $idEntreprise));
     }
 
     public function list()
@@ -90,6 +90,7 @@ class RepondantModel extends Database
         $repondant->setEmail($key['email']);
 
         $repondant->setTelephone($key['telephone']);
+
 
         return $repondant;
     }

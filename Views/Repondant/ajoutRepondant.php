@@ -14,9 +14,6 @@
     <div class="card mt-4">
         <div class="card-header">
             <span class="h2">Formulaire d'ajout de Repondant</span>
-            <span class="offset-5">
-                <a href="/NousLesFemmes/Repondant/liste" class="btn btn-success">Listes des Repondants</a>
-            </span>
         </div>
         <div class="card-body">
             <form action="/NousLesFemmes/Repondant/add" class="row mt-4" method="post">
@@ -35,6 +32,20 @@
                 <div class="form-group col-md-6">
                     <label for="">Telephone Repondant</label>
                     <input type="text" name="telephone" class="form-control" required>
+                </div>
+
+                <div class="form-group col-md-6" id="idEntreprise">
+                        <label for="idEntreprise" class="control-label">Entrepris</label>
+                        <select name="idEntreprise" id="idEntreprise" class="form-control">
+                            <option value="0">--Entreprise--</option>
+                            <?php
+                            foreach ($entreprises as $entreprise) {
+                            ?>
+                                <option value="<?php echo $entreprise['idEntreprise']; ?>"><?php echo $entreprise['nomentreprise']; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
                 </div>
                 <div class="mt-4">
                    <input type="submit" value="Enregistrer" class="btn btn-primary" name="add">

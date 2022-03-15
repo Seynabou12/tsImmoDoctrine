@@ -12,12 +12,9 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid" style="padding: 10px 90px;">
+        <div class="row mt-5">
             <span class="h2"> LISTE DES ENTREPRISES </span>
-            <span class="mt-2">
-                <a href="/NousLesFemmes/Entreprise/add" class="btn btn-danger">Ajouter une Entreprise</a>
-            </span>
             <div class="row mt-4">
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -30,6 +27,9 @@
                             <th>Page Web</th>
                             <th>Registre De Commerce</th>
                             <th>NINEA</th>
+                            <th>Commune</th>
+                            <th>Domaine</th>
+                            <th>Statut Juridique</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -47,9 +47,12 @@
                                 <td><?= $e->getPage(); ?></td>
                                 <td><?= $e->getRegistre(); ?></td>
                                 <td><?= $e->getNinea(); ?></td>
+                                <td><?= $e->getId_commune(); ?></td>
+                                <td><?= $e->getId_domaine(); ?></td>
+                                <td><?= $e->getIdStatut(); ?></td>
                                 <td>
                                     <a href="/NousLesFemmes/Entreprise/edit/<?=$e->getIdEntreprise()?>" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" class="btn btn-success"><i class="bi bi-plus"></i></a>
+                                    <a href="/NousLesFemmes/Entreprise/show/<?=$e->getIdEntreprise()?>" class="btn btn-success"><i class="bi bi-plus"></i></a>
                                     <a href="/NousLesFemmes/Entreprise/delete/<?=$e->getIdEntreprise()?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                     
                                 </td>

@@ -122,4 +122,9 @@ class EntrepriseModel extends Database
 
         return $entreprise;
     }
+   
+    public function listeEntreprise()
+    {
+        return $this->executeSelect('SELECT * FROM Entreprise')->fetchAll();
+    }
 }

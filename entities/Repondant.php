@@ -9,7 +9,7 @@ class Repondant
     private $prenomRepondant;
     private $email;
     private $telephone;
-    private $fonction;
+    private $id_entrprose;
 
 
     /**
@@ -112,7 +112,27 @@ class Repondant
         return $this;
     }
 
- 
+
+
+    /**
+     * Get the value of id_entrprose
+     */ 
+    public function getId_entrprose()
+    {
+        return $this->id_entrprose;
+    }
+
+    /**
+     * Set the value of id_entrprose
+     *
+     * @return  self
+     */ 
+    public function setId_entrprose($id_entrprose)
+    {
+        $this->id_entrprose = $id_entrprose;
+
+        return $this;
+    }
 }
 
 ?>

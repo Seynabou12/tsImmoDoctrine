@@ -2,9 +2,13 @@
 
 namespace Controllers;
 
+use Entities\Entreprise;
 use Models\RepondantModel;
+use Models\EntrepriseModel;
 
-require_once 'Models/RepondantModel.php';
+require 'Models/RepondantModel.php';
+require 'Models/EntrepriseModel.php';
+
 
 class RepondantController
 
@@ -21,11 +25,12 @@ class RepondantController
             extract($_POST);
             $db = new RepondantModel();
         
-            $a = $db->insert($nomRepondant, $prenomRepondant, $email, $telephone);
+            $a = $db->insert($nomRepondant, $prenomRepondant, $email, $telephone, $idEntreprise);
             $this->liste();
         } 
         else 
         {
+            
             include 'Views/Repondant/ajoutRepondant.php';
         }
     }

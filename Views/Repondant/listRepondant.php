@@ -15,9 +15,7 @@
     <div class="container">
         <div class="row">
             <span class="h2"> LISTE DES REPONDANTS </span>
-            <span class="mt-2">
-                <a href="/NousLesFemmes/Repondant/add" class="btn btn-danger">Ajouter un Repondant</a>
-            </span>
+           
             <div class="row mt-4">
                 <table class="table table-bordered table-striped">
 

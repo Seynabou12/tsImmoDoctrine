@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="form-group col-md-6" id="idDomaine">
-                        <label for="idClient" class="control-label">Domaine</label>
+                        <label for="idDomaine" class="control-label">Domaine</label>
                         <select name="idDomaine" id="idDomaine" class="form-control">
                             <option value="0">--domaine--</option>
                             <?php

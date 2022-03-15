@@ -16,9 +16,6 @@
     <div class="card mt-4">
         <div class="card-header">
             <span class="h2">Les Informations de l'Entreprise</span>
-            <span class="offset-5">
-                <a href="/NousLesFemmes/Entreprise/liste" class="btn btn-success">Listes des Entreprises</a>
-            </span>
         </div>
         <div class="card-body">
             <form action="/NousLesFemmes/Entreprise/add" class="row mt-4" method="post">
@@ -27,10 +24,18 @@
                     <label for="">Nom Entreprise</label>
                     <input type="text" name="nomEntreprise" class="form-control" required> 
                 </div>
-                <div class="form-group col-md-6">
+                <div>
+                    <label>Nombre Employés</label>
+                    <select class="form-select col-md-6" name="nombre" required>
+                        <option value="1 a 5">1 a 5</option>
+                        <option value="5 a 15">5 a 15</option>
+                        <option value="plus">plus</option>
+                    </select>
+                </div>
+                <!-- <div class="form-group col-md-6">
                     <label for="">Nombre Employés</label>
                     <input type="number" name="nombre" class="form-control" required>
-                </div>
+                </div> -->
                 <div class="form-group col-md-6">
                     <label for="">Siege Social</label>
                     <input type="text" name="siege" class="form-control" required>
@@ -56,7 +61,7 @@
                 </div>
 
                 <div class="form-group col-md-6" id="idDomaine">
-                        <label for="idClient" class="control-label">Domaine</label>
+                        <label for="idDomaine" class="control-label">Domaine</label>
                         <select name="idDomaine" id="idDomaine" class="form-control">
                             <option value="0">--domaine--</option>
                             <?php

@@ -2,7 +2,6 @@
 
 namespace Controllers;
 
-
 use Models\DomaineDb;
 use Models\EntrepriseModel;
 use Models\StatutJuridique;

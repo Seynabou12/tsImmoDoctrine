@@ -1,6 +1,6 @@
 <?php
 
-
+require_once('./Views/headerFooter/footer.php');
 require_once('vendor/autoload.php');
 
 $url = $_SERVER['REQUEST_URI'];
