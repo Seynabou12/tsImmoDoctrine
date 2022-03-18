@@ -49,7 +49,6 @@ class EntrepriseModel extends Database
         $queryPrepare = $this->pdo->prepare("DELETE FROM Entreprise WHERE idEntreprise=?");
         return $queryPrepare->execute(array($idEntreprise));
     }
-
     
     public function list()
     {
@@ -89,7 +88,6 @@ class EntrepriseModel extends Database
         return $entreprises;
     }
 
-
     public function getById($id)
     {
         $entreprises = [];
@@ -126,5 +124,10 @@ class EntrepriseModel extends Database
     public function listeEntreprise()
     {
         return $this->executeSelect('SELECT * FROM Entreprise')->fetchAll();
+    }
+
+    public function listEntreprise(){
+        return $this->executeSelect('SELECT * FROM Entreprise')->fetchAll();
+        
     }
 }

@@ -30,7 +30,12 @@ class RepondantController
         } 
         else 
         {
-            
+            try {
+                $entreprise = new EntrepriseModel();
+                $entreprises = $entreprise->listEntreprise();  
+            } catch (\Throwable $th) {
+                die($th->getMessage());
+            }
             include 'Views/Repondant/ajoutRepondant.php';
         }
     }

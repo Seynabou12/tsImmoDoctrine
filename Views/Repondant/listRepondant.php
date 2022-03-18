@@ -26,6 +26,7 @@
                             <th>Prenom Repondant</th>
                             <th>Telephone Repondant</th>
                             <th>Email Repondant</th>
+                            <th>Nom Entreprise</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -40,6 +41,7 @@
                                 <td><?= $e->getPrenomRepondant(); ?></td>
                                 <td><?= $e->getEmail(); ?></td>
                                 <td><?= $e->getTelephone(); ?></td>
+                                <td><?= $e->getId_entrprose(); ?></td>
                                 <td>
                                     <a href="/NousLesFemmes/Repondant/edit/<?=$e->getIdRepondant()?>" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" class="btn btn-success"><i class="bi bi-plus"></i></a>

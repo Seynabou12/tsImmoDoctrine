@@ -51,6 +51,8 @@ class RepondantModel extends Database
 
             $repondant->setTelephone($key['telephone']);
 
+            $repondant->setId_entrprose($key['idEntreprise']);
+
             $repondants[] = $repondant;
         }
 
