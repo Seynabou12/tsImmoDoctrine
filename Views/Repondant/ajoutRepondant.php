@@ -39,7 +39,7 @@
                         <select name="idEntreprise" id="idEntreprise" class="form-control">
                             <option value="0">--Entreprise--</option>
                             <?php
-                            foreach ($entreprises as $entreprise) {
+                                foreach ($entreprises as $entreprise) {
                             ?>
                                 <option value="<?php echo $entreprise['idEntreprise']; ?>"><?php echo $entreprise['nomentreprise']; ?></option>
                             <?php

@@ -1,6 +1,8 @@
 <?php
-
-require_once('./Views/headerFooter/footer.php');
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
+// require_once('./Views/headerFooter/footer.php');
 require_once('vendor/autoload.php');
 
 $url = $_SERVER['REQUEST_URI'];
@@ -46,7 +48,9 @@ if (file_exists('Controllers/' . $url[2] . 'Controller.php')) {
         die($error);
     }
 } else {
-    require('./Views/headerFooter/header.php');
+    if(isset($_SESSION['user'])){
+        require('./Views/home.php');
+    } else{
+        require('./Views/auth/login.php');
+    }
 }
-
-?>

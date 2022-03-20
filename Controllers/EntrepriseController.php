@@ -61,7 +61,7 @@ require 'Models/Commune.php';
 
                 extract($_POST);
                 $db = new EntrepriseModel();
-            
+             
                 $a = $db->insert($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre, $ninea);
                 $this->liste();
 
@@ -80,6 +80,7 @@ require 'Models/Commune.php';
                 } catch (\Throwable $th) {
                     die($th->getMessage());
                 }
+                
                 try {
                     $domaine = new DomaineDb();
                     $domaines = $domaine->listeDomaine();  
@@ -141,4 +142,5 @@ require 'Models/Commune.php';
             $this->liste();
         }
     }
+    
 ?>
