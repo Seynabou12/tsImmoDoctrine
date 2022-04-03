@@ -1,5 +1,6 @@
 <?php
-if(session_status() == PHP_SESSION_NONE){
+
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 // require_once('./Views/headerFooter/footer.php');
@@ -13,7 +14,6 @@ $url = explode('/', $url);
 if (file_exists('Controllers/' . $url[2] . 'Controller.php')) {
 
     $url[2] = ucfirst($url[2]) . 'Controller';
-
     $c = "Controllers\\" . $url[2];
     if (class_exists($c)) {
         $c = new $c();
@@ -34,12 +34,12 @@ if (file_exists('Controllers/' . $url[2] . 'Controller.php')) {
                 die($error);
             }
         } else {
-            if (method_exists($c, "liste")) {
-                $c->liste();
-            } else {
-                $error = "Pas de view correspondant";
-                die($error);
-            }
+            // if (method_exists($c, "liste")) {
+            //     $c->liste();
+            // } else {
+            //     $error = "Pas de view correspondant";
+            //     die($error);
+            // }
         }
     } 
     else 
@@ -48,9 +48,5 @@ if (file_exists('Controllers/' . $url[2] . 'Controller.php')) {
         die($error);
     }
 } else {
-    if(isset($_SESSION['user'])){
-        require('./Views/home.php');
-    } else{
-        require('./Views/auth/login.php');
-    }
+    echo "index";
 }

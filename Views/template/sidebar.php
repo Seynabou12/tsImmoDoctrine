@@ -41,7 +41,7 @@
             <a href="/NousLesFemmes" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Home
+                Accueil
               </p>
             </a>
           </li>
