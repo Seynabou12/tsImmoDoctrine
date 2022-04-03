@@ -17,22 +17,28 @@ class Proprietaire
      */
     private $nom;
 
-     /** @orm\Column(type="string") */
+    /** @orm\Column(type="string") */
      private $prenom;
-       /** @orm\Column(type="string") */
+
+    /** @orm\Column(type="string") */
     private $adresse;
-     /** @orm\Column(type="string") */
-     private $email;
-      /** @orm\Column(type="string") */
+
+    /** @orm\Column(type="string") */
+    private $email;
+
+    /** @orm\Column(type="string") */
     private $civilites;
 
-     /** @orm\Column(type="string") */
-     private $telephone;
-       /** @orm\Column(type="string") */
+    /** @orm\Column(type="string") */
+    private $telephone;
+
+    /** @orm\Column(type="string") */
     private $sexe;
-     /** @orm\Column(type="string") */
-     private $date_naissance;
-      /** @orm\Column(type="string") */
+
+    /** @orm\Column(type="string") */
+    private $date_naissance;
+
+    /** @orm\Column(type="string") */
     private $lieu_naissance;
 
     public function __construct()
