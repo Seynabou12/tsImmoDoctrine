@@ -24,15 +24,11 @@ class ProprietaireRepository extends Database
         return $proprietaire;
     }
 
-
-    
     public function findProprietaire($id)
     {
         $p = $this->db->getRepository('Proprietaire')->find($id);
         return $p;
     }
-
-
 
     
     public function findAllProprietaire()
@@ -40,8 +36,6 @@ class ProprietaireRepository extends Database
         $p = $this->db->getRepository('Proprietaire')->findAll();
         return $p;
     }
-
-
     
     public function deleteProprietaire($id)
     {

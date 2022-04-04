@@ -76,25 +76,6 @@ class ProprietaireController
 
     //     } else {
 
-    //         try {
-    //             $commune = new Commune();
-    //             $communes = $commune->listeCommune();  
-    //         } catch (\Throwable $th) {
-    //             die($th->getMessage());
-    //         }
-
-    //         try {
-    //             $statut = new StatutJuridique();
-    //             $statuts = $statut->listeStatut();  
-    //         } catch (\Throwable $th) {
-    //             die($th->getMessage());
-    //         }
-    //         try {
-    //             $domaine = new DomaineDb();
-    //             $domaines = $domaine->listeDomaine();  
-    //         } catch (\Throwable $th) {
-    //             die($th->getMessage());
-    //         }
 
     //         $entrepriseModel = new EntrepriseModel();
 
@@ -104,10 +85,10 @@ class ProprietaireController
     //     }
     // }
 
-    // public function delete($idEntreprise)
-    // {
-    //     $db = new EntrepriseModel;
-    //     $entreprises = $db->delete($idEntreprise);
-    //     $this->liste();
-    // }
+    public function delete($id)
+    {
+        $db = new ProprietaireRepository;
+        $proprietaire = $db->deleteProprietaire($id);
+        $this->liste();
+    }
 }

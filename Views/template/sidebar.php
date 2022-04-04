@@ -14,7 +14,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/NousLesFemmes/Public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/testDoctrine/Public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Seynbou Dione</a>
@@ -55,17 +55,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/NousLesFemmes/Entreprise/add" class="nav-link">
+                <a href="/testDoctrine/Proprietaire/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Ajouter Entreprise</p>
+                  <p>Ajouter Propriétaire</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/NousLesFemmes/Repondant/add" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ajouter Repondant</p>
-                </a>
-              </li>
+             
             </ul>
           </li>
           <li class="nav-item">
@@ -78,27 +73,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/NousLesFemmes/Entreprise/liste" class="nav-link">
+                <a href="/testDoctrine/Proprietaire/liste" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Liste Entreprise</p>
+                  <p>Liste Propriétaire</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/NousLesFemmes/Repondant/liste" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Liste Repondant</p>
-                </a>
-              </li>
+             
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="/NousLesFemmes/User/login" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
-              <p>
-                Connexion
-              </p>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a href="/NousLesFemmes/User/logout" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>

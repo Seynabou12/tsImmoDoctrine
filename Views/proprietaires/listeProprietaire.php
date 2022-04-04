@@ -6,10 +6,11 @@ require_once('./Views/template/sidebar.php');
 
 ?>
     <div class="container-fluid" style="padding: 10px 90px;">
-        <div class="row mt-5">
-            <span class="h2"> LISTE DES ENTREPRISES </span>
-           
-
+        <div class="row mt-5 container-fluid">
+        <div class="alert alert-secondary h1 text-center" >
+           LISTES DES PROPRIETAIRE
+        </div>
+    </div>
             <div class="row mt-4">
             
                 <table class="table table-bordered table-striped">
@@ -48,7 +49,6 @@ require_once('./Views/template/sidebar.php');
                                 <td><?= $proprietaire->getLieu_naissance(); ?></td>
                                 <td>
                                     <a href="/testDoctrine/Proprietaire/edit/<?=$proprietaire->getIdProprietaire()?>" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="/testDoctrine/Proprietaire/show/<?=$proprietaire->getIdProprietaire()?>" class="btn btn-success"><i class="bi bi-plus"></i></a>
                                     <a href="/testDoctrine/Proprietaire/delete/<?=$proprietaire->getIdProprietaire()?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                     
                                 </td>
