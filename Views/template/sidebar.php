@@ -2,25 +2,23 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-warning " >
+  <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-dark " >
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">TS_IMMO</span>
+      <span class="brand-text font-weight-light" style="font-size: 30px;">TS_IMMO</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="/testDoctrine/Public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <!-- <div class="image">
+          <img src="" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Seynbou Dione</a>
-        </div>
+          <a href="#" class="d-block" style="font-size: 20px;">Seynbou Dione</a>
+        </div> -->
       </div>
-
-      <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
@@ -31,13 +29,11 @@
           </div>
         </div>
       </div>
-
-      <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="font-size: 25px;">
          
           <li class="nav-item">
-            <a href="/NousLesFemmes" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Accueil
@@ -48,7 +44,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                Formulaires
+                Formulaires d'ajout
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -59,14 +55,14 @@
                   <p>Ajouter Propriétaire</p>
                 </a>
               </li>
-             
             </ul>
+            
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Listes
+                Liste
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -81,15 +77,7 @@
             </ul>
           </li>
           
-          <li class="nav-item">
-            <a href="/NousLesFemmes/User/logout" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
-              <p>
-                Déconnexion
-              <i class="nav-icon fas fa-columns"></i>
-              </p>
-            </a>
-          </li>
+         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

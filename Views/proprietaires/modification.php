@@ -16,15 +16,16 @@ require_once('./Views/template/sidebar.php');
                 </span>
             </div>
             <div class="card-body">
-                <form action="/testDoctrine/Proprietaire/edit/" class="row mt-4" method="post">
+                <form action="/testDoctrine/Proprietaire/edit/<?= $proprietaire->getIdProprietaire()?>" class="row mt-4" method="post">
 
+                
                     <div class="form-group col-md-6">
                         <label for="">Nom Proprietaire</label>
                         <input type="text" name="nom" class="form-control" value="<?= $proprietaire->getNom() ?>" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="">Prenom Proprietaire</label>
-                        <input type="text" name="prenon" class="form-control" value="<?= $proprietaire->getPrenom() ?>" required>
+                        <input type="text" name="prenom" class="form-control" value="<?= $proprietaire->getPrenom() ?>" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="">Adresse</label>
@@ -47,11 +48,11 @@ require_once('./Views/template/sidebar.php');
 
                     <div class="form-group col-md-6">
                         <label for="">Date de Naissance</label>
-                        <input type="date" name="date" value="<?= $proprietaire->getDate_naissance() ?>" class="form-control">
+                        <input type="date" name="dateNaissance" value="<?= $proprietaire->getDate_naissance() ?>" class="form-control">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="">Lieu de Naissance</label>
-                        <input type="text" name="lieu" value="<?= $proprietaire->getDate_naissance() ?>" class="form-control">
+                        <input type="text" name="lieuNaissance" value="<?= $proprietaire->getDate_naissance() ?>" class="form-control">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="">Email</label>

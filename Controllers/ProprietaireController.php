@@ -65,42 +65,45 @@ class ProprietaireController
 
     public function edit($id)
     {
-        
+
         try {
 
             $db = new ProprietaireRepository();
-        
+
             if (isset($_POST['modifier'])) {
 
                 extract($_POST);
+
+                $proprietaire = $db->findProprietaire($id);
+
+                $proprietaire->setNom($nom);
+                $proprietaire->setPrenom($prenom);
+                $proprietaire->setAdresse($adresse);
+                $proprietaire->setEmail($email);
+                $proprietaire->setCivilites($civilites);
+                $proprietaire->setTelephone($telephone);
+                $proprietaire->setSexe($sexe);
+                $proprietaire->setDate_naissance($dateNaissance);
+                $proprietaire->setLieu_naissance($lieuNaissance);
+
                
+                $a = $db->updateProprietaire($proprietaire);
                 if ($a->getIdProprietaire() != null) {
                     $this->liste();
+                    return;
                 } else {
                     include 'Views/proprietaires/modification.php';
+                    return;
                 }
             } else {
                 $proprietaire = $db->findProprietaire($id);
                 include 'Views/proprietaires/modification.php';
+                return;
             }
         } catch (\Throwable $th) {
             die($th->getMessage());
         }
-    //         try {
-                
-    //             extract($_POST);
-           
-    //         $proprietaireRepository = new ProprietaireRepository();
-    //         $proprietaire = $proprietaireRepository->updateProprietaire($id);
-           
-            
-    //         $this->liste();
-    //         } catch (\Throwable $th) {
-    //             die($th->getMessage());
-    //         }
-    //         require_once 'Views/proprietaires/modification.php';
-    
-}
+    }
 
     public function delete($id)
     {
