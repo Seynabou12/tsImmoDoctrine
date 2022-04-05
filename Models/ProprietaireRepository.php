@@ -14,11 +14,11 @@ class ProprietaireRepository extends Database
     }
 
 
-    public function updateProprietaire(Proprietaire $proprietaire)
+    public function updateProprietaire($proprietaire)
     {
-        $p = $this->db->getRepository('Proprietaire')->find($proprietaire->getIdProprietaire());
+        $p = $this->db->getRepository('Proprietaire')->find($proprietaire);
         if ($p != null) {
-            $this->db->merge($proprietaire);
+            $this->db->merge($p);
             $this->db->flush();
         }
         return $proprietaire;

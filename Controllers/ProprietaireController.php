@@ -1,6 +1,9 @@
 <?php
 
+
+
 namespace Controllers;
+
 
 use Proprietaire;
 use ProprietaireRepository;
@@ -60,30 +63,44 @@ class ProprietaireController
         }
     }
 
-    // public function edit($id)
-    // {
-    //     if(isset($_POST['modifier'])){
+    public function edit($id)
+    {
+        
+        try {
 
+            $db = new ProprietaireRepository();
+        
+            if (isset($_POST['modifier'])) {
+
+                extract($_POST);
+               
+                if ($a->getIdProprietaire() != null) {
+                    $this->liste();
+                } else {
+                    include 'Views/proprietaires/modification.php';
+                }
+            } else {
+                $proprietaire = $db->findProprietaire($id);
+                include 'Views/proprietaires/modification.php';
+            }
+        } catch (\Throwable $th) {
+            die($th->getMessage());
+        }
     //         try {
+                
     //             extract($_POST);
-    //         $db = new EntrepriseModel();
-
-    //         $a = $db->update($nomEntreprise, $nombre, $siege, $datecreation, $idCommune, $idStatut, $idDomaine, $page, $registre, $ninea, $id);
+           
+    //         $proprietaireRepository = new ProprietaireRepository();
+    //         $proprietaire = $proprietaireRepository->updateProprietaire($id);
+           
+            
     //         $this->liste();
     //         } catch (\Throwable $th) {
     //             die($th->getMessage());
     //         }
-
-    //     } else {
-
-
-    //         $entrepriseModel = new EntrepriseModel();
-
-    //         $entreprise = $entrepriseModel->getById($id);
-
-    //         include 'Views/Entreprises/modification.php';
-    //     }
-    // }
+    //         require_once 'Views/proprietaires/modification.php';
+    
+}
 
     public function delete($id)
     {
